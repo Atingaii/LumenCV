@@ -50,8 +50,8 @@
 ```html
 <div class="edu-school">XXXXX</div>
 <div class="edu-major">人工智能｜本科</div>
-<div class="edu-date">2020年09月 - 2024年06月</div>
-<div class="edu-loc">郑州</div>
+<div class="edu-date">XXXXX</div>
+<div class="edu-loc">XXXXX</div>
 ```
 
 ### 3. 修改荣誉奖项
