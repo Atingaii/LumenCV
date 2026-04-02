@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>XXXXX - 个人简历</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 页面整体排版：适配 A4，一页简历 */
+    @page {
+      size: 210mm 297mm;
+      margin: 7mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", "Segoe UI", Arial, sans-serif;
+      font-size: 11.2px;
+      line-height: 1.42;
+      color: #222;
+      background: #f5f5f5;
+    }
+
+    .resume {
+      width: 210mm;
+      max-width: 210mm;
+      margin: 2px auto;
+      padding: 8px 16px;
+      background: #fff;
+      border-radius: 6px;
+    }
+
+    /* 标题区 */
+    .name {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 800;
+      font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", "Segoe UI", Arial, sans-serif;
+      letter-spacing: 2px;
+      margin-bottom: 2px;
+    }
+
+    .contact {
+      text-align: center;
+      font-size: 12px;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 6px 0 10px;
+    }
+
+    /* 一级标题 */
+    .section-title {
+      font-size: 13px;
+      font-weight: 650;
+      margin: 6px 0 3px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 2px;
+    }
+
+    /* 列表样式 */
+    ul {
+      margin: 1px 0 0 16px;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 1px;
+    }
+
+    /* 加粗文字：使用微软雅黑/宋体略粗于正文，避免过重 */
+    strong, b {
+      font-weight: 550;
+    }
+
+    /* 教育经历布局 */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 2px 0;
+      margin-bottom: 0;
+    }
+
+    .edu-left {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .edu-school {
+      font-weight: 700;
+      font-size: 12.2px;
+    }
+
+    .edu-major {
+      margin-top: 1px;
+      color: #333;
+    }
+
+    .edu-right {
+      text-align: right;
+      font-size: 11.6px;
+      white-space: nowrap;
+    }
+
+    .edu-date {
+      margin-bottom: 0;
+    }
+
+    .edu-loc {
+      margin-top: 1px;
+      color: #333;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 6px;
+      padding: 0 6px;
+      border-radius: 3px;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.1;
+      vertical-align: 1px;
+      border: 1px solid transparent;
+    }
+
+    .tag-blue {
+      background: #eaf2ff;
+      color: #2f6fff;
+      border-color: #cfe0ff;
+    }
+
+    /* 荣誉奖项 */
+    .award-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 1px 0;
+    }
+
+    .award-name {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .award-date {
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    /* 项目部分 */
+    .project {
+      margin-bottom: 2px;
+    }
+
+    .project-title {
+      font-weight: 700;
+      font-size: 1.05em;
+      margin-top: 3px;
+      margin-bottom: 7px;
+    }
+
+    .project-title strong {
+      font-weight: 700;
+    }
+
+    .project-sub {
+      margin: 0 0 2px;
+    }
+
+    .project ul {
+      margin-top: 2px;
+    }
+
+    /* 打印优化：避免“整段被挤到下一页”导致多一页 */
+    .section {
+      page-break-inside: auto;
+    }
+
+    @media print {
+      @page {
+        size: 210mm 297mm;
+        margin: 7mm;
+      }
+
+      body {
+        background: #fff;
+        font-size: 11.0px;
+        line-height: 1.38;
+      }
+      .resume {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 3.5mm 5mm;
+        width: auto;
+        max-width: none;
+      }
+
+      .name { margin-bottom: 2px; }
+      .contact { margin-bottom: 6px; }
+      .divider { margin: 6px 0 10px; }
+      .section-title { margin: 6px 0 3px; padding-bottom: 2px; }
+      .project { margin-bottom: 2px; }
+      .project-title { margin-bottom: 6px; }
+      .project-sub { margin: 0 0 2px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <!-- 头部：姓名 + 联系方式 -->
+    <div class="name">XXXXX-后端开发实习生</div>
+    <div class="contact">
+      电话：XXXXX ｜ 邮箱：XXXXX
+    </div>
+
+    <!-- 教育经历 -->
+    <div class="section">
+      <div class="section-title">教育经历</div>
+
+      <div class="edu-item">
+        <div class="edu-left">
+          <div class="edu-school">XXXXX <span class="tag tag-blue">211</span></div>
+          <div class="edu-major">计算机科学与技术｜硕士</div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-date">2025年09月 - 2028年06月</div>
+          <div class="edu-loc">重庆</div>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-left">
+          <div class="edu-school">XXXXX</div>
+          <div class="edu-major">人工智能｜本科</div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-date">2020年09月 - 2024年06月</div>
+          <div class="edu-loc">郑州</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 荣誉奖项 -->
+    <div class="section">
+      <div class="section-title">荣誉奖项</div>
+      <div class="award-item">
+        <div class="award-name">XXXXX</div>
+        <div class="award-date">2025年11月</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">XXXXX</div>
+        <div class="award-date">2022年03月</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">XXXXX</div>
+        <div class="award-date">2021年10月</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">XXXXX</div>
+        <div class="award-date">2022年10月</div>
+      </div>
+    </div>
+
+    <!-- 专业技能 -->
+    <div class="section">
+      <div class="section-title">专业技能</div>
+      <ul>
+        <li>扎实的数据结构与算法基础（数组、链表、哈希、树、排序等）</li>
+        <li>熟悉 Java 及并发编程，理解集合、IO、泛型、Lambda、线程池、JUC 等核心特性</li>
+        <li>熟悉 JVM 原理（类加载、内存模型、垃圾回收等），能进行基础排查与调优</li>
+        <li>熟悉 MySQL 使用与优化（事务、索引、MVCC、慢查询分析等）</li>
+        <li>熟悉 Spring / Spring Boot / MyBatis 等主流 Java 后端框架，能独立搭建后端服务</li>
+        <li>了解 Spring Cloud、Spring Cloud Gateway、Redis、RabbitMQ 等分布式相关技术</li>
+        <li>了解计算机网络与 Linux 常用命令（TCP/IP、HTTP/HTTPS 等）</li>
+        <li>掌握 Spring AI、RAG 检索增强生成、MCP、Skills工具使用、Agent 智能体架构设计</li>
+      </ul>
+    </div>
+
+    <!-- 项目经历 -->
+    <!-- 项目经历 -->
+    <div class="section">
+      <div class="section-title">项目经历</div>
+
+      <!-- 项目一 -->
+      <div class="project">
+        <div class="project-title"><strong>XXXXX</strong></div>
+        <p class="project-sub">
+          基于 <strong>DDD</strong> 分层架构设计并实现一套<strong>拼团营销交易系统</strong>，覆盖“<strong>优惠试算 -> 锁单 -> 支付结算 -> 退单</strong>”全链路，支持<strong>多种优惠策略</strong>与<strong>人群筛选</strong>。
+        </p>
+        <p class="project-sub"><strong>技术栈：</strong>Spring Boot、MyBatis、MySQL、Redis、RabbitMQ、Docker、动态配置中心（DCC）、ELK、Prometheus 等</p>
+        <p class="project-sub"><strong>核心职责：</strong></p>
+        <ul>
+          <li>基于 <strong>DDD</strong> 进行<strong>领域建模</strong>,拆分活动、标签、交易等核心领域，完成<strong>拼团规则校验</strong>、标签匹配、<strong>交易结算</strong>等服务的设计与落地。</li>
+          <li>采用<strong>责任链+规则树</strong>结合<strong>策略模式</strong>,抽象优惠规则与人群规则,支持多维条件（人群标签、渠道、时间、金额等）的<strong>动态组合与试算</strong>，实现规则链的<strong>可配置</strong>与可扩展。</li>
+          <li>利用 <strong>Redis 发布/订阅</strong>实现动态配置中心(<strong>DCC</strong>),通过注解 + 反射在配置变更时<strong>秒级热更新</strong>业务字段，实现<strong>无感知配置下发</strong>与快速切量/降级。</li>
+          <li>使用 <strong>Redis + BitMap</strong> 管理用户标签与可售库存，设计<strong>无锁化库存扣减</strong>方案，缓解数据库读写压力，并对拼团活动的人群<strong>可见性</strong>与参与次数进行精细化控制。</li>
+          <li>基于 <strong>RabbitMQ</strong> 实现异步事件处理，设计 <strong>HTTP + MQ</strong> 双通道回调与消息持久化重试机制，配合分布式锁，保证高并发场景下的<strong>最终一致性</strong>与<strong>回调可靠性</strong>。</li>
+          <li>设计<strong>可扩展的拦截器</strong>与<strong>智能路由</strong>，通过自定义枚举状态和路由机制，将新增拼团/优惠场景对核心流程的改动降到最低，提升系统<strong>可维护性</strong>与可扩展。</li>
+          <li>搭建 <strong>ELK</strong> 日志采集与查询体系，引入 <strong>Prometheus</strong> 对核心链路指标进行<strong>监控</strong>与告警，提升故障定位与问题排查效率；完成微信扫码登录、微信/支付宝支付等对接与沙箱联调。</li>
+        </ul>
+      </div>
+
+      <!-- 项目二 -->
+      <div class="project">
+        <div class="project-title"><strong>XXXXX</strong></div>
+        <p class="project-sub">
+          面向<strong>业务应用系统提效</strong>，构建一套 <strong>Ai Agent</strong> 综合智能体方案，覆盖<strong>需求文档分析</strong>、<strong>代码评审</strong>、文档资料编写 + 消息通知、<strong>ELK 日志检索</strong>与<strong>Prometheus 监控</strong>的智能分析等场景；将 <strong>Advisor / Prompt / MCP</strong> 等能力<strong>抽象入库</strong>，实现<strong>自由配置与编排</strong>，按需组装不同场景的 Ai Auto Agent。
+        </p>
+        <p class="project-sub"><strong>技术栈：</strong>Spring AI（RAG、MCP、Advisor）、Spring Boot、MyBatis、MySQL、PGVector、Redis、React、flowgram.ai、Docker 等</p>
+        <p class="project-sub"><strong>核心职责：</strong></p>
+        <ul>
+          <li>围绕<strong>业务提效</strong>目标完成需求调研与方案设计，基于 <strong>DDD</strong> 分层架构进行模块拆分与领域建模，沉淀可复用的<strong>可编排 Ai Agent</strong> 执行能力（配置化装配 + 运行时注入）。</li>
+          <li>抽象 Ai Agent 运行元模型：<strong>Advisor</strong>（上下文记忆 / 接入 <strong>RAG</strong>）、Prompt、Model、Tool（Function Call / <strong>MCP</strong>）；通过数据库表实现<strong>表驱动编排</strong>、灰度与<strong>版本化管理</strong>（含编排配置版本）。</li>
+          <li>设计通用<strong>对话分析与执行引擎</strong>，实现“问题分析 -> 任务规划 -> 精准执行 -> 结果校验/判罚 -> 循环优化 -> 总结输出”闭环，并通过<strong>SSE</strong>流式回传过程与结果。</li>
+          <li>实现 <strong>MCP Client</strong> 适配层（<strong>stdio / SSE</strong>），以配置化方式接入外部检索/监控/日志类 MCP 工具能力，统一注册管理并装配到模型<strong>Tool Callback</strong>调用链路。</li>
+          <li>搭建 <strong>RAG</strong> 知识库（<strong>PGVector</strong>）能力，支持文件/资料解析入库，按<strong>标签</strong>管理知识空间供 Advisor 检索增强，提升问答/评审/分析<strong>准确性</strong>与一致性。</li>
+          <li>基于 <strong>Spring TaskScheduler</strong> 封装任务调度与触发机制，支持按配置<strong>定时触发</strong>智能体执行，并可扩展至巡检/告警分析/报告生成等业务场景。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
