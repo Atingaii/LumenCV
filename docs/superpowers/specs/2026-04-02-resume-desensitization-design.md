@@ -1,81 +1,83 @@
-# Resume Desensitization Design
+# 简历脱敏设计说明
 
-## Goal
+## 目标
 
-For the current HTML resume project, make the minimum necessary changes to:
+针对当前 HTML 简历项目，仅做最小必要改动，完成以下两件事：
 
-1. Desensitize personally identifiable and directly attributable content in the existing resume HTML.
-2. Add a `README.md` that explains how to edit and export the resume independently.
+1. 对现有简历中的个人可识别信息和可直接归属的信息做脱敏处理。
+2. 新增一个 `README.md`，说明如何自行修改和导出这份简历。
 
-## Confirmed Scope
+## 已确认范围
 
-The user explicitly confirmed the following:
+用户已经明确确认以下边界：
 
-- Keep the existing HTML structure and current layout direction.
-- Do not rewrite project descriptions.
-- Do not redesign styling or add visual enhancements.
-- Add a `README.md`.
+- 保持现有 HTML 结构和当前排版方向不变。
+- 不重写项目说明。
+- 不做样式重设计，也不额外增加视觉改造。
+- 需要新增 `README.md`。
 
-## Files In Scope
+## 涉及文件
 
 - `简历_gpt.html`
 - `README.md`
 
-## Desensitization Rules
+## 脱敏规则
 
-Replace the following content with `XXXXX` in `简历_gpt.html`:
+在 `简历_gpt.html` 中，将以下内容统一替换为 `XXXXX`：
 
-- Name
-- Phone number
-- Email address
-- School names
-- Award names
-- Project names
+- 姓名
+- 手机号
+- 邮箱
+- 学校名称
+- 奖项名称
+- 项目名称
 
-Keep the following content unchanged:
+以下内容保持不变：
 
-- Technical stack names
-- Generic technical concepts
-- Existing project responsibility descriptions
-- Dates, locations, and layout structure
+- 技术栈名称
+- 通用技术概念
+- 现有项目职责描述
+- 时间、地点以及整体排版结构
 
-## HTML Change Strategy
+## HTML 修改策略
 
-Apply surgical content-only changes:
+仅进行内容层面的精确修改：
 
-- Replace visible identifying strings in the title and page body.
-- Keep CSS unchanged unless required for content fit after replacement.
-- Preserve one-page A4 intent by avoiding structural expansion.
+- 替换标题和正文中可见的身份识别信息。
+- 除非脱敏后的文本长度影响显示，否则不改 CSS。
+- 保持当前“一页 A4”的设计目标，不扩大结构，不新增复杂布局。
 
-## README Strategy
+## README 策略
 
-Create a short operational README that explains:
+新增一个简短、可操作的 `README.md`，至少说明以下内容：
 
-- What this project is
-- Which sections in the HTML are intended for manual edits
-- How to replace personal information, education, awards, skills, and projects
-- How to open the file locally in a browser
-- How to export or print to A4 PDF
+- 这个项目是什么
+- HTML 中哪些区域适合手动修改
+- 如何修改个人信息、教育经历、奖项、技能、项目经历
+- 如何在本地浏览器中打开该文件
+- 如何导出或打印成 A4 PDF
 
-Tone should be practical and formal. It should reflect the user's intent that this is an HTML + GPT collaborative resume template and does not depend on Word-style layout editing.
+文档语气应当简洁、正式、实用，并体现用户的原始意图：这是一个基于 HTML + GPT 协作整理的简约简历模板，不依赖 Word 的排版方式，也能产出正式简历。
 
-## Non-Goals
+## 非目标
 
-- Rewriting project bullets using STAR
-- Editing technology descriptions
-- Introducing build tools, frameworks, or scripts
-- Splitting the resume into multiple files
+以下内容不在本次范围内：
 
-## Risks
+- 按 STAR 法则重写项目描述
+- 修改技术说明内容
+- 引入构建工具、框架或脚本
+- 将简历拆分为多个文件
 
-- Some identifying information may remain if not directly visible in the main content.
-- Replacing short labels with repeated `XXXXX` can slightly reduce readability, but this is acceptable for the desensitized version.
+## 风险
 
-## Acceptance Criteria
+- 如果页面中还存在未被注意到的可识别信息，可能会有遗漏。
+- 多处统一替换为 `XXXXX` 会轻微降低可读性，但这是脱敏版本可以接受的取舍。
 
-Implementation is complete when:
+## 验收标准
 
-1. `简历_gpt.html` no longer exposes the user's real name, phone, email, school names, award names, or project names.
-2. Technical stack and responsibility text remain intact.
-3. `README.md` exists and clearly explains how to edit and export the resume.
-4. No unnecessary style or structure changes are introduced.
+满足以下条件即可视为完成：
+
+1. `简历_gpt.html` 中不再暴露真实姓名、电话、邮箱、学校名、奖项名和项目名。
+2. 技术栈和项目职责描述保持原样。
+3. `README.md` 已创建，并清晰说明如何编辑和导出简历。
+4. 未引入无关的样式或结构改动。
