@@ -1,3 +1,5 @@
+
+
 # HTML 简历模板
 
 ## 项目说明
@@ -94,7 +96,9 @@
 
 ```html
 <div class="project-title"><strong>XXXXX</strong></div>
+<p class="project-sub">项目背景与简介</p>
 <p class="project-sub"><strong>技术栈：</strong>Spring Boot、MyBatis、MySQL</p>
+<p class="project-sub"><strong>核心职责：</strong></p>
 <ul>
   <li>这里写项目职责或亮点</li>
 </ul>
